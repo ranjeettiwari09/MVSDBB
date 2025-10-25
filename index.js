@@ -18,6 +18,7 @@ app.use(cors())
 app.use(express.json())
 cloudinaryConfig();
 app.get("/",(req,res)=>{
+    res.send("console.log listning")
     console.log("Listing")
 })
 app.use("/auth",router)
