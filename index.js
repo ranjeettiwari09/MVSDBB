@@ -17,6 +17,7 @@ dotenv.config()
 app.use(cors())
 app.use(express.json())
 cloudinaryConfig();
+mongoose.connect(process.env.MONGODB_URI)//
 app.get("/",(req,res)=>{
     res.send("console.log listning")
     console.log("Listing")
@@ -29,7 +30,6 @@ app.use("/announce",AnnounceRouter)
 app.use("/booking",bookingRouter)
 
 app.listen(process.env.PORT,(req,res)=>{
-    mongoose.connect(process.env.MONGODB_URI)
    console.log("server is listening on port 5000")
    console.log("database connected")
 })
