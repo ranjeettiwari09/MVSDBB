@@ -17,6 +17,9 @@ dotenv.config()
 app.use(cors())
 app.use(express.json())
 cloudinaryConfig();
+app.get("/",(req,res)=>{
+    console.log("Listing")
+})
 app.use("/auth",router)
 app.use("/news",routerNews)
 app.use("/mailer",mailerRouter)
